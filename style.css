@@ -1,0 +1,303 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f8ff;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background-color: #0077b6;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+nav li {
+  margin: 0 15px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 2rem;
+  background-color: #caf0f8;
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+.feature-card {
+  background: white;
+  padding: 1rem;
+  width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Gallery Section */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Downloads Section */
+.downloads {
+  padding: 2rem;
+  text-align: center;
+}
+.downloads ul {
+  list-style: none;
+  padding: 0;
+}
+.downloads li {
+  margin: 1rem 0;
+}
+.downloads a {
+  color: #0077b6;
+  text-decoration: none;
+  font-weight: bold;
+}
+.downloads a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background-color: #0077b6;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+footer a {
+  color: #ffd166;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+.card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card,
+.fade-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.card.visible,
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery img {
+  cursor: zoom-in;
+}
+
+#lightbox {
+  transition: opacity 0.3s ease;
+}
+.card, .fade-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+.card.visible, .fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery img {
+  cursor: zoom-in;
+}
+
+#lightbox {
+  transition: opacity 0.3s ease;
+}
+/* Text glow on scroll */
+.glow {
+  text-shadow: 0 0 8px #00f0ff, 0 0 16px #00cfff;
+  transition: text-shadow 0.6s ease;
+}
+
+/* Grayscale until in view */
+img.gray {
+  filter: grayscale(100%);
+  transition: filter 1s ease;
+}
+
+img.in-view {
+  filter: grayscale(0%);
+}
+@keyframes rainbowBorder {
+  0% { border-color: red green blue yellow; }
+  25% { border-color: green blue yellow red; }
+  50% { border-color: blue yellow red green; }
+  75% { border-color: yellow red green blue; }
+  100% { border-color: red green blue yellow; }
+}
+/* Scroll reveal animation */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* 61️⃣ Fireflies */
+.firefly {
+  width: 5px;
+  height: 5px;
+  background: yellow;
+  position: fixed;
+  border-radius: 50%;
+  box-shadow: 0 0 8px yellow;
+  z-index: 1;
+}
+
+/* 62️⃣ Underline animation */
+.underline-hidden {
+  position: relative;
+}
+.underline-hidden::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #00f7ff;
+  transition: width 0.6s ease;
+}
+.underline-visible::after {
+  width: 100%;
+}
+
+/* 65️⃣ Snowflake animation */
+@keyframes snowFall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+/* 66️⃣ Shake effect */
+@keyframes shakePage {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+/* 67️⃣ Wave animation */
+@keyframes waveAnim {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* 70️⃣ Bubbles rise */
+@keyframes bubbleRise {
+  0% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+/* 75️⃣ Ripple effect */
+.ripple {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: scale(1);
+  animation: rippleEffect 0.6s ease-out;
+  pointer-events: none;
+  z-index: 9999;
+}
+@keyframes rippleEffect {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(10);
+    opacity: 0;
+  }
+}
+/* 76️⃣ Glowing mouse trail */
+.mouse-glow {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: cyan;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 8px cyan;
+  animation: fadeTrail 0.5s forwards;
+  z-index: 9999;
+}
+
+@keyframes fadeTrail {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(2); }
+}
